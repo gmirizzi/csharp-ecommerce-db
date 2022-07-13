@@ -110,4 +110,9 @@ using (ECommerceContext db = new ECommerceContext())
             }
         }
     }
+    //Modifica di un ordine
+    List<Order> orders = db.Orders.ToList<Order>();
+    Order firstOrder = orders.First();
+    firstOrder.Status = "Annullato";
+    db.SaveChanges();
 }
