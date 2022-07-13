@@ -115,4 +115,7 @@ using (ECommerceContext db = new ECommerceContext())
     Order firstOrder = orders.First();
     firstOrder.Status = "Annullato";
     db.SaveChanges();
+    //Cancellazione ordine
+    db.Remove(firstOrder);
+    db.SaveChanges();
 }
